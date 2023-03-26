@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TinyMceFontAwesomeSelectorContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\TinyMceFontAwesomeSelector\**\*.*</TinyMceFontAwesomeSelectorContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyTinyMceFontAwesomeSelectorAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <TinyMceFontAwesomeSelectorContentFiles Include="$(TinyMceFontAwesomeSelectorContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying TinyMceFontAwesomeSelector files: $(TinyMceFontAwesomeSelectorContentFilesPath) - #@(TinyMceFontAwesomeSelectorContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(TinyMceFontAwesomeSelectorContentFiles)" DestinationFiles="@(TinyMceFontAwesomeSelectorContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\TinyMceFontAwesomeSelector\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearTinyMceFontAwesomeSelectorAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <TinyMceFontAwesomeSelectorDir Include="$(MSBuildProjectDirectory)\App_Plugins\TinyMceFontAwesomeSelector\" />
+    </ItemGroup>
+    <Message Text="Clear old TinyMceFontAwesomeSelector data" Importance="high" />
+    <RemoveDir Directories="@(TinyMceFontAwesomeSelectorDir)" />
+  </Target>
+</Project>

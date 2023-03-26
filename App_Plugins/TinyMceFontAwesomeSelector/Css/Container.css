@@ -1,0 +1,58 @@
+.mce-dave > .mce-container-body {
+	display: flex !important;
+	flex-flow: row wrap;
+	width: 100% !important;
+	height: auto !important;
+	max-height: 100% !important;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.mce-dave > .mce-container-body > div {
+	margin: 8px;
+	cursor: pointer;
+	height: fit-content;
+}
+
+.mce-dave {
+	width: 100% !important;
+	max-height: 100% !important;
+}
+
+.mce-dave > .mce-container-body > .mce-container > .mce-container-body {
+	position: relative;
+}
+
+.mce-mastercontainer > .mce-container-body {
+	display: flex !important;
+	flex-flow: row wrap;
+	width: 100% !important;
+	height: 456px !important;
+}
+
+.fa-solid, .fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+.fab {
+	font-family: 'Font Awesome 5 Brands' !important;
+	font-weight: 400 !important;
+}
+
+.tooltiptext {
+	position: absolute !important;
+	z-index: 1;
+	display: none;
+	top: 0;
+	left: 20px;
+	background-color: #ddd !important;
+	border-radius: 2px;
+	box-sizing: border-box !important;
+	padding: 2px !important;
+	font-weight: 501 !important;
+}
+
+.fas:hover + .tooltiptext {
+  display: block;
+}
